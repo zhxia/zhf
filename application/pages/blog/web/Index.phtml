@@ -1,0 +1,11 @@
+<?php foreach ($rows as $row):?>
+<div><a href="/view/<?=$row['id']?>"><?=$row['title']?></a></div>
+<?php endforeach;?>
+<?php $this->script_block_begin();?>
+<script type="text/javascript">
+<!--
+    var a="hello world!";
+    var b="what you name ?";
+//-->
+</script>
+<?php $this->script_block_end();?>

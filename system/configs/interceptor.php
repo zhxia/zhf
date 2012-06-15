@@ -1,0 +1,20 @@
+<?php
+$config['global'][]=array(
+    'ZHF_Debugger',
+);
+//====================================
+//资源文件处理controller不能使用debugger
+//controller基类不是用debugger
+//====================================
+$config['ZHF_Controller']=array(
+    '!ZHF_Debugger'
+);
+$config['ZHF_Resource_Resource']=array(
+    '!ZHF_Debugger'
+);
+$config['ZHF_Resource_CompressResource']=array(
+    '!ZHF_Debugger'
+);
+$config['ZHF_Resource_YuiCompressResource']=array(
+    '!ZHF_Debugger'
+);

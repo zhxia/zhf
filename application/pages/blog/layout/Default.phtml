@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title><?=$this->get_title()?></title>
+<?php foreach ($this->get_head_sections() as $section):?>
+<?=$section?>
+<?php endforeach;?>
+<?php $this->component('ZHF_Resource_StyleBlocks'); ?>
+<?php $this->component('ZHF_Resource_ScriptBlocks',array('head'=>'head'));?>
+</head>
+<body>
+<?php $this->component('Blog_Web_Header')?>
+<?php $this->real_page();// 调用DecoratorPage中的real_page方法?>
+<?php $this->component('ZHF_Resource_ScriptBlocks');?>
+</body>
+</html>

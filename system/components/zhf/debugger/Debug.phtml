@@ -1,0 +1,29 @@
+<table class="table_debug" border="1" cellpadding="5" cellspacing="0">
+<caption>BENCHMARK</caption>
+<thead><tr><th>NAME</th><th>TIME</th><th>MEMORY (byte)</th></tr></thead>
+<tbody>
+<?php foreach ($this->get_benchmarks() as $name=>$times):?>
+<?php
+	$time=$times[ZHF_Debugger::BENCHMARK_END]-$times[ZHF_Debugger::BENCHMARK_BEGIN];
+	$memory=$times[ZHF_Debugger::BENCHMARK_END_MEMORY]-$times[ZHF_Debugger::BENCHMARK_BEGIN_MEMORY];
+?>
+<tr>
+<td><?=$name?></td>
+<td><?=number_format($time,4)?></td>
+<td><?=number_format($memory)?></td>
+</tr>
+<?php endforeach;?>
+</tbody>
+</table>
+
+<table class="table_debug" border="1" cellpadding="5" cellspacing="0">
+<caption>MESSAGES</caption>
+<thead><tr><th>TIME</th><th>MEMORY (byte)</th><th>MESSAGE</th></tr></thead>
+<tbody>
+<?php foreach ($this->get_messages() as $message):?>
+<tr><td><?=number_format($message[ZHF_Debugger::MESSAGE_TIME],4)?></td>
+<td><?=number_format($message[ZHF_Debugger::MESSAGE_MEMORY])?></td>
+<td><?=$message[ZHF_Debugger::MESSAGE_CONTENT]?></td></tr>
+<?php endforeach;?>
+</tbody>
+</table>
