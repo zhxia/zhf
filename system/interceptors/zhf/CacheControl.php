@@ -31,7 +31,7 @@ class ZHF_CacheControlInterceptor extends ZHF_Interceptor{
             $time=$this->get_last_modified_time($cache_key);
             //检测last_modified
             if(isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])){
-                $last_modified=$_SERVER['HTTP_IF_MODIFIED_SINCE'];
+                $last_modified=strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']);
                   if($time==$last_modified){
                       $this->zhf->get_response()->set_header('HTTP/1.1', '304 Not Modified','304');
                       ob_end_clean();
