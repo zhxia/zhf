@@ -72,7 +72,7 @@ class ZHF_Response{
             $this->set_header('Content-type', "{$content_type};charset:{$charset}");
         }
         else{
-            $this->set_header('Content-type', $charset);
+            $this->set_header('Content-type', $content_type);
         }
     }
 }
